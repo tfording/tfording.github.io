@@ -58,6 +58,34 @@ body, html {
         background-attachment: scroll;
     }
 }
+
+.flex-container {
+    /* Display this element as flex-box */
+    display: flex;
+    /* When items overflow wrap them to the next line */
+    flex-wrap: wrap;
+    /* Center items on each row */
+    justify-content: center;
+  }
+
+  .flex-item {
+    /* Every item should try to be this wide (i.e. 4 items per row) */
+    flex-basis: 25%;
+    /* No item should ever get smaller to make room */
+    flex-shrink: 0;
+    /* Items should never grow to take up leftover space */
+    flex-grow: 0;
+    /* Leave space on the left and right */
+    padding: 0 8px;
+  }
+
+  /* On devices smaller than 1024px (tablets) */
+  @media only screen and (max-device-width: 1024px) {
+    /* Each item should be 33.3% wide (i.e. 3 items per row) */
+    .flex-item {
+      flex-basis: 33.3%;
+    }
+  }
 </style>
 <body>
 
@@ -111,61 +139,56 @@ body, html {
     </div>
   </div>
   <p class="w3-large w3-center w3-padding-16">I'm really good at:</p>
-  <!-- Init Table -->
-  <table class="w3-table" width="100%">
-    <!-- Row 1 of 4 -->
-    <tr>
-      <td width="50%"><p><i class="fa fa-code-fork"></i> Python</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-      <td width="50%"><p><i class="fa fa-database"></i> SQL</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-    </tr>
-    <!-- Row 2 of 4 -->
-    <tr>
-      <td width="50%"><p><i class="fa fa-line-chart"></i> Statistics</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-      <td width="50%"><p><i class="fa fa-code"></i> R</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-    </tr>
-    <!-- Row 3 of 4 -->
-    <tr>
-      <td width="50%"><p><i class="fa fa-bar-chart"></i> Data Visualization</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-      <td width="50%"><p><i class="fa fa-area-chart"></i> Data Modeling</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-    </tr>
-    <!-- Row 4 of 4 -->
-    <tr>
-      <td width="50%"><p><i class="fa fa-github"></i> Git/Github</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-      <td width="50%"><p><i class="fa fa-cloud"></i> Cloud/Remote Computing</p>
-        <div class="w3-light-grey">
-          <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
-        </div>
-      </td>
-    </tr>
-  </table>
+  <div class="flex-container">
+    <div class="flex-item">
+      <p><i class="fa fa-code-fork"></i> Python</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-database"></i> SQL</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-line-chart"></i> Statistics</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-code"></i> R</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-bar-chart"></i> Data Visualization</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-area-chart"></i> Data Modeling</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-github"></i> Git/Github</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+    <div class="flex-item">
+      <p><i class="fa fa-cloud"></i> Cloud/Remote Computing</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey" style="width:100%"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Second Parallax Image with Portfolio Text -->
